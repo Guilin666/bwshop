@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <bwie.example.com.bwshop.view.NestedScrollView
+        android:id="@+id/nest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <cn.bingoogolapple.bgabanner.BGABanner
+                android:id="@+id/bg_home"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"></cn.bingoogolapple.bgabanner.BGABanner>
+
+            <GridView
+                android:id="@+id/grid_home"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_200"
+                android:layout_below="@+id/bg_home"
+                android:numColumns="5"></GridView>
+
+            <com.gongwen.marqueen.SimpleMarqueeView
+                android:id="@+id/simpleMarqueeView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/grid_home"
+                android:flipInterval="2500"
+                android:inAnimation="@anim/in_top"
+                android:outAnimation="@anim/out_bottom"
+                app:marqueeAnimDuration="2000"
+                app:smvTextColor="@color/colorAccent"
+                app:smvTextEllipsize="end"
+                app:smvTextGravity="left"
+                app:smvTextSingleLine="true"
+                app:smvTextSize="15sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/seller_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/simpleMarqueeView"></android.support.v7.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+
+    </bwie.example.com.bwshop.view.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/tu"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_30"
+            android:id="@+id/scan_w"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/home_scan_bg"
+            android:padding="@dimen/dp_5"
+            android:src="@drawable/scan_w" />
+
+        <EditText
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_30"
+            android:id="@+id/ed_messgae"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_weight="1"
+            android:background="@drawable/home_seach"
+            android:hint="请输入你想要的" />
+
+        <ImageView
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_30"
+            android:id="@+id/home_message"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/home_scan_bg"
+            android:padding="@dimen/dp_5"
+            android:src="@drawable/home_message" />
+
+    </LinearLayout>
+
+</RelativeLayout>
